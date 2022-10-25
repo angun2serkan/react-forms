@@ -5,7 +5,7 @@ const useInput = (validateValue) => {
   const [isTouched, setIsTouched] = useState(false);
 
   const valueIsValid = validateValue(enteredValue);
-  const hasError = !valueIsValid && isTouched;
+  const hasError = isTouched && !valueIsValid;
 
   const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
